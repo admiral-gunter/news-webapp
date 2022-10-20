@@ -35,7 +35,8 @@ const LamanBerita = ()=>{
                             <img src={data.urlToImage} alt="" className='w-[350px]' />
                             <div className='flex flex-col'>
                                 <p className="text-justify text-lg font-bold">{data.title}</p>
-                                <p className="text-sm">By {data.author}</p>
+                                <p className="text-sm text-slate-400">By {data.author}</p>
+                                <p className="text-sm text-slate-700">Published At {new Date(data.publishedAt).toLocaleDateString('id-ID')}</p>
                                 <p
                                     className="text-sm"
                                     style={{
