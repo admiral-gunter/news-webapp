@@ -1,0 +1,25 @@
+
+.bg {
+/* background-image: url("https://static.vecteezy.com/system/resources/previews/001/370/764/original/abstract-flat-background-free-vector.jpg"); */
+
+/* background: red;
+width: 100%; */
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+/* background-position: center;
+background-repeat: no-repeat;
+background-size: cover; */
+}
+
+img{
+    width: 100%;
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
