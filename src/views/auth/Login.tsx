@@ -1,12 +1,18 @@
 import './Login.css'
-import IMAGE from '../../assets/backgroundImage.jpeg'
+import { useNavigate } from 'react-router-dom';
+
 const INPUT = "border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " 
+
 const Login = ()=>{
+    const history = useNavigate();
+    const handleSubmit=(e:any, route:string)=> {
+        e.preventDefault();
+
+        history(route);
+    }
     return(
-
-
             <div className='flex justify-center'>
-                <div className='flex-col bg-white w-fit rounded-md shadow-md p-[10px] gap- mt-[5%]'>
+                <div className='flex-col bg-white w-fit rounded-md shadow-md p-[30px] mt-[3%]'>
                     <p className='text-2xl font-bold text-center text-blue-700 hover:text-blue-900'>PORTAL BERITA</p>
                     <div className='my-[10px]'>
                         <hr />
@@ -27,7 +33,12 @@ const Login = ()=>{
                     </div>
 
                     <div className='flex justify-center'>
-                        <p className='bg-green-500 hover:bg-green-700 p-[10px] rounded-md shadow-md text-white font-bold w-full text-center'>Login</p>
+                        <button 
+                            className='bg-green-500 hover:bg-green-700 p-[10px] rounded-md shadow-md text-white font-bold w-full text-center'
+                            onClick={(event)=>handleSubmit(event, '/berita')}
+                        >
+                            Login
+                        </button>
                     </div>
 
                     <div className='my-[20px]'>

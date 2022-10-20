@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Select from 'react-select';
+import { useNavigate } from 'react-router-dom';
 
 const FIELDS = [
     {key:'first_name', title:'First Name', type:'text'},
@@ -10,20 +11,20 @@ const FIELDS = [
         {value:1, label:'Laki laki'},
         {value:2, label:'Perempuan'},
     ]},
-    {key:'kota', type:'select', title:'Kota',options:[
-        {value:1, label:'Jakarta'},
-        {value:2, label:'Bandung'},
-        {value:3, label:'Yogyakarta'},
-        {value:4, label:'Malang'},
-        {value:5, label:'Maluku'},
-    ]},
     {key:'provinsi', type:'select', title:'Provinsi',options:[
         {value:1, label:'Jawa Barat'},
         {value:2, label:'Jawa Tengah'},
         {value:3, label:'Jawa Timur'},
         {value:4, label:'Timor Timur'},
         {value:5, label:'Papua Merdeka'},
-    ]}
+    ]},
+    {key:'kota', type:'select', title:'Kota',options:[
+        {value:1, label:'Bandung'},
+        {value:2, label:'Semarang'},
+        {value:3, label:'Surabaya'},
+        {value:4, label:'Dili'},
+        {value:5, label:'Irian Jaya'},
+    ]},
 ]
 
 //LOL papua merdeka cuman jokes :(
@@ -50,6 +51,15 @@ const Register = ()=>{
     const SUBMIT = (e:any)=>{
         e.preventDefault()
         console.log('le summitear')
+    }
+
+    const history = useNavigate();
+
+
+    const handleSubmit=(e:any, route:string)=> {
+        e.preventDefault();
+
+        history(route);
     }
 
     return(
@@ -114,7 +124,8 @@ const Register = ()=>{
                             'bg-green-200 p-[10px] rounded-md shadow-md text-white font-bold w-full text-center'
                             :
                             'bg-green-500 hover:bg-green-700 p-[10px] rounded-md shadow-md text-white font-bold w-full text-center'}
-                    >Daftar</button>
+                        onClick={(event)=>handleSubmit(event, '/login')}
+                    >Register</button>
                 </div>
             </div>
         </form>

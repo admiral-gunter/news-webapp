@@ -1,3 +1,9 @@
+# Issues
+
+- body API does not provide Content Details So i use External Link Instead
+
+- kebingungan di maksud Kota Berdasarkan Provinsi
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
